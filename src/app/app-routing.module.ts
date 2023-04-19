@@ -17,6 +17,7 @@ const routes: Routes = [
     path: 'contact',
     component: ContactPageComponent,
   },
+
   {
     path: '**',
     redirectTo: '',
