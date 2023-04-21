@@ -13,6 +13,7 @@ export class ByCountryPageComponent implements OnInit {
   public initialValue: string = '';
 
   constructor(private countriesService: CountriesService) {}
+
   ngOnInit(): void {
     this.countries = this.countriesService.cacheStore.byCountries.countries;
     this.initialValue = this.countriesService.cacheStore.byCountries.term;
