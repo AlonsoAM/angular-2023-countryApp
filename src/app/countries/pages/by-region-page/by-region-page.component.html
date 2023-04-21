@@ -5,9 +5,8 @@
     <!-- Botones de las regiones -->
     <button
       class="btn btn-outline-success"
-      (click)="buscarPaisPorRegion(boton.value)"
-      [value]="region"
-      #boton
+      (click)="buscarPaisPorRegion(region)"
+      [ngClass]="{ 'btn-success text-white': selectedRegion === region }"
     >
       {{ region | uppercase }}
     </button>
