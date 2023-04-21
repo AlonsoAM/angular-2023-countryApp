@@ -33,7 +33,9 @@
         <td>{{ cuontry.name.common }}</td>
         <td>{{ cuontry.capital }}</td>
         <td>{{ cuontry.population | number }}</td>
-        <td><a href="">Ver más...</a></td>
+        <td>
+          <a [routerLink]="['/countries/by', cuontry.cca3]">Ver más...</a>
+        </td>
       </tr>
     </tbody>
   </table>
