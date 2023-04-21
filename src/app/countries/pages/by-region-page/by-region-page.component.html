@@ -1,1 +1,22 @@
-<p>by-region-page works!</p>
+<h2>Por Región</h2>
+<hr />
+<div class="row">
+  <div class="col d-grid gap-5" *ngFor="let region of regions; index as i">
+    <!-- Botones de las regiones -->
+    <button
+      class="btn btn-outline-success"
+      (click)="buscarPaisPorRegion(boton.value)"
+      [value]="region"
+      #boton
+    >
+      {{ region | uppercase }}
+    </button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col">
+    <!-- Tabla de resultados -->
+    <countries-table [countries]="countries"></countries-table>
+  </div>
+</div>
