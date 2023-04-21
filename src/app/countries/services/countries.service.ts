@@ -14,10 +14,9 @@ export class CountriesService {
   // Reftiorización
 
   private getCountriesRequest(url: string): Observable<Country[]> {
-    return this.httpClient.get<Country[]>(url).pipe(
-      catchError((error) => of([])),
-      delay(2000)
-    );
+    return this.httpClient
+      .get<Country[]>(url)
+      .pipe(catchError((error) => of([])));
   }
 
   // Fin refactorizacion

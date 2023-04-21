@@ -10,12 +10,15 @@ import { Country } from '../../interfaces/country.interface';
 export class ByRegionPageComponent {
   public regions: string[] = ['asia', 'america', 'africa', 'europe', 'oceania'];
   public countries: Country[] = [];
+  public isLoading: boolean = false;
 
   constructor(private countriesService: CountriesService) {}
 
   buscarPaisPorRegion(region: string): void {
-    this.countriesService
-      .searchRegion(region)
-      .subscribe((countries) => (this.countries = countries));
+    this.isLoading = true;
+    this.countriesService.searchRegion(region).subscribe((countries) => {
+      this.countries = countries;
+      this.isLoading = false;
+    });
   }
 }
